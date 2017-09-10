@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users
+  root to: 'piece_of_news#show'
+
+  get 'admin' => 'piece_of_news#new'
+
+  resources :piece_of_news, only: %i[create]
 end

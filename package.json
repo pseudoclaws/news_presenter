@@ -4,9 +4,17 @@
   "dependencies": {
     "@rails/webpacker": "^3.0.1",
     "babel-preset-react": "^6.24.1",
+    "es6-actioncable": "^0.5.5",
+    "immutable": "^3.8.1",
+    "moment": "^2.18.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-datetime": "^2.10.1",
+    "react-dom": "^15.6.1",
+    "react-materialize": "^1.0.11",
+    "react_ujs": "^2.2.1",
+    "redux": "^3.7.2",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.7.1"
