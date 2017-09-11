@@ -9,9 +9,13 @@ class PieceOfNewsController < ApplicationController
   end
 
   def create
-    @piece_of_news = CreateAuthorized.new(piece_of_news_params).call
     respond_to do |format|
-      format.json { render json: @piece_of_news, status: :created }
+      begin
+        @piece_of_news = CreateAuthorized.new(piece_of_news_params).call
+        format.json { render json: @piece_of_news, status: :created }
+      rescue ActiveRecord::RecordInvalid
+        format.json { head :unprocessable_entity }
+      end
     end
   end
 

@@ -13,6 +13,9 @@ RSpec.describe CreateAuthorized, type: :class do
   end
 
   it 'schedules discard job' do
-    expect { CreateAuthorized.new(news_params).call }.to change(DiscardAuthorized.jobs, :size).by(1)
+    ActiveJob::Base.queue_adapter = :test
+    expect {
+      CreateAuthorized.new(news_params).call
+    }.to have_enqueued_job(DiscardAuthorized)
   end
 end
