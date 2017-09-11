@@ -1,8 +1,9 @@
 db:
-  image: mysql:5.5
+  image: postgres:9.5.3
   environment:
-      MYSQL_DATABASE: disc_test
-      MYSQL_ROOT_PASSWORD: 123456
+  - POSTGRES_PASSWORD=123456
+  - POSTGRES_USER=postgres
+  - POSTGRES_DB=news_presenter_development
 
 redis:
   image: redis
@@ -15,9 +16,9 @@ web:
   command: ./bin/start.sh
   volumes:
     - .:/app
-#  environment:
-#    - DB_USERNAME=root
-#    - DB_PASSWORD=123456
+  environment:
+    - DB_USERNAME=postgres
+    - DB_PASSWORD=123456
   links:
     - db
     - redis
@@ -26,7 +27,7 @@ web:
 
 sidekiq:
  build: .
- command: bundle exec sidekiq -q default -q ts_delta -q mailers -e production -p tmp/pids/sidekiq.pid -L log/sidekiq.log -d
+ command: bundle exec sidekiq -q default -e production -p tmp/pids/sidekiq.pid -L log/sidekiq.log -d
  links:
    - db
    - redis

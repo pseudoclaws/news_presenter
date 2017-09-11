@@ -2,11 +2,11 @@
 
 import WebSocket from '../websocket';
 
-class RootPageSubscription {
-  constructor() {
-  }
+export default class RootPageSubscription {
+  constructor() { }
   subscribe(receivedCallback) {
-    this.subscription = WebSocket.getConsumer().subscriptions.create("RootPageChannel", {
+    this.socket = new WebSocket();
+    this.subscription = this.socket.getConsumer().subscriptions.create("RootPageChannel", {
       connected: function () {
         console.log('connected to RootPageChannel');
       },

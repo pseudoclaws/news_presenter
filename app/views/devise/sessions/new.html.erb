@@ -1,0 +1,120 @@
+<!--<h2>Log in</h2>-->
+
+<!--<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>-->
+  <!--<div class="field">-->
+    <%# f.label :email %><br />
+    <!--<%= f.email_field :email, autofocus: true %>-->
+  <!--</div>-->
+
+  <!--<div class="field">-->
+    <%# f.label :password %><br />
+    <!--<%= f.password_field :password, autocomplete: "off" %>-->
+  <!--</div>-->
+
+  <!--<% if devise_mapping.rememberable? -%>-->
+    <!--<div class="field">-->
+      <!--<%= f.check_box :remember_me %>-->
+      <!--<%= f.label :remember_me %>-->
+    <!--</div>-->
+  <!--<% end -%>-->
+
+  <!--<div class="actions">-->
+    <!--<%= f.submit "Log in" %>-->
+  <!--</div>-->
+<!--<% end %>-->
+
+<!--<%= render "devise/shared/links" %>-->
+
+<html>
+
+<head>
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application.js' %>
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    body {
+      background: #fff;
+    }
+
+    .input-field input[type=date]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=email]:focus + label,
+    .input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="section"></div>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<main>
+  <center>
+    <!--<img class="responsive-img" style="width: 250px;" src="https://i.imgur.com/ax0NCsK.gif" />-->
+    <div class="section"></div>
+
+    <h5 class="indigo-text">Пожалуйста авторизуйтесь</h5>
+    <div class="section"></div>
+
+    <div class="container">
+      <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
+
+        <form class="col s12" method="post">
+          <div class='row'>
+            <div class='col s12'>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class='input-field col s12'>
+              <%= f.email_field :email, autofocus: true, class: 'validate' %>
+              <label for='email'>Ваш email</label>
+            </div>
+          </div>
+
+          <div class='row'>
+            <div class='input-field col s12'>
+              <%= f.password_field :password, autocomplete: "off", class: 'validate' %>
+              <label for='password'>Ваш пароль</label>
+            </div>
+            <label style='float: right;'>
+              <%= link_to content_tag(:b, "Забыли пароль?"), new_password_path(resource_name), class: 'pink-text' %>
+            </label>
+          </div>
+
+          <br />
+          <center>
+            <div class='row'>
+              <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Войти!</button>
+            </div>
+          </center>
+        </form>
+      </div>
+    </div>
+    <!--<a href="#!">Create account</a>-->
+  </center>
+
+  <div class="section"></div>
+  <div class="section"></div>
+</main>
+<% end %>
+</body>
+
+</html>

@@ -14,6 +14,7 @@ export default class DisplayCardContainer extends React.Component
     };
 
     this.stateChanged = this.stateChanged.bind(this);
+    this.subscription = new RootPageSubscription();
   }
 
   render()
@@ -23,12 +24,12 @@ export default class DisplayCardContainer extends React.Component
 
   componentDidMount()
   {
-    RootPageSubscription.subscribe(this.stateChanged);
+    this.subscription.subscribe(this.stateChanged);
   }
 
   componentWillUnmount()
   {
-    RootPageSubscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
 
   stateChanged(data)

@@ -22,13 +22,14 @@ export default class EditCard extends React.Component
             <div className="card-content">
               <div className="input-field">
                 <input
-                  placeholder="Заголовок новости"
+                  id="title-input"
                   name="title"
                   type="text"
                   value={this.props.title || ''}
                   onChange={this.inputChanged}
                   disabled={this.props.saving ? 'disabled' : ''}
                 />
+                <label htmlFor="title-input">Заголовок новости</label>
                 <div
                   className="error"
                   style={ {display: this.props.title_error ? '' : 'none'} }>
@@ -51,7 +52,7 @@ export default class EditCard extends React.Component
 
               <div className="row">
                 <div className="col s12">
-                  <span style={ {color: 'lightgray'} }>Действительна до:</span>
+                  <span style={ {color: 'lightgray', paddingLeft: 10 } }>Действительна до:</span>
                   <div className="input-field inline">
                     <Datetime
                       inputProps={ {id: 'valid_until'} }

@@ -2,6 +2,8 @@
 
 import Cable from 'es6-actioncable';
 
+const WEBSOCKET_URL = '/cable';
+
 export default class Websocket {
   constructor() {
   }
