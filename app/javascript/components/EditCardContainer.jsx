@@ -37,10 +37,28 @@ export default class EditCardContainer extends React.Component
   inputChanged(e)
   {
     let field = {};
-    field[e.target.name] = e.target.value;
-    if(e.target.value.length > 0) field[`${e.target.name}_error`] = false;
+    let field_name, new_value = '';
+    if(e.target === void 0)
+    {
+      field_name = 'valid_until';
+      if(typeof(e) !== 'string')
+      {
+        new_value = e.format();
+      }
+      else
+      {
+        new_value = this.state.valid_until;
+      }
+    }
+    else
+    {
+      field_name = e.target.name;
+      new_value = e.target.value;
+    }
+    field[field_name] = new_value;
+    if(new_value > 0) field[`${field_name}_error`] = false;
     this.setState(field);
-    this.checkChanged(e.target.name, e.target.value);
+    this.checkChanged(field_name, new_value);
   }
 
   onSave()
