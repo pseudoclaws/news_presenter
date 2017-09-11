@@ -78,3 +78,5 @@ gem 'react-rails'
 gem 'devise'
 gem 'jquery-rails'
 gem 'js-routes'
+
+gem 'unicorn'
