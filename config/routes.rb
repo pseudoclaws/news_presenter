@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get 'admin' => 'piece_of_news#new'
 
   resources :piece_of_news, only: %i[create]
+  mount ActionCable.server => '/cable'
 end
