@@ -82,3 +82,4 @@ gem 'js-routes'
 
 gem 'unicorn'
 gem 'sidekiq'
+gem 'sidekiq-scheduler'
