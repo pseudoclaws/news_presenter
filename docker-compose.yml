@@ -1,9 +1,6 @@
 version: '2'
 
 services:
-  nginx:
-    image: 'nginx-latest'
-
   db:
     image: 'postgres:9.6-alpine'
     environment:
