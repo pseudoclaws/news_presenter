@@ -1,5 +1,7 @@
 'use strict';
 import React from 'react'
+import 'moment/locale/ru'
+import moment from 'moment'
 
 export default class DisplayCard extends React.Component {
   constructor(props)
@@ -15,7 +17,7 @@ export default class DisplayCard extends React.Component {
         <div className="col s12">
           <div className="card blue-grey darken-1">
             <div className="card-content white-text">
-              <span className="card-title">{this.props.piece_of_news.title}</span>
+              <span className="card-title">{`${moment(this.props.piece_of_news.published_at).format('DD.MM.YYYY HH:mm')} | ${this.props.piece_of_news.title}`}</span>
               <p dangerouslySetInnerHTML={ {__html: this.props.piece_of_news.description} }/>
             </div>
             <this.Footer/>
