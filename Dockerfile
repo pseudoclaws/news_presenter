@@ -25,7 +25,7 @@
 #CMD [ "node" ]
 
 FROM ruby:2.4.0
-RUN apt-get update -qq && apt-get install -y build-essential libmysqlclient-dev mysql-client expect nginx
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev libmysqlclient-dev mysql-client expect
 
 # Install RMagick
 RUN apt-get install -y libmagickwand-dev imagemagick
@@ -93,12 +93,12 @@ RUN set -ex \
     && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
     && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
-WORKDIR /tmp
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
-RUN bundle install -j 4
-
+RUN mkdir /app
 WORKDIR /app
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
+RUN bundle install
+ADD . /app
 
 # (Optional) Set custom Unicorn configuration (if you have any)
 COPY config/unicorn/production.rb config/unicorn.rb
@@ -108,6 +108,7 @@ COPY config/nginx/development.conf /etc/nginx/sites-enabled/default
 # Automatically start the web server
 CMD gem install foreman && \
     RAILS_ENV=production bundle exec rake assets:precompile && \
+    RAILS_ENV=production rake db:exists && rake db:migrate || rake db:setup && \
     foreman start -f Procfile
 
 #CMD ./bin/start.sh
