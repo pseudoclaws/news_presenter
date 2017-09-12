@@ -1,0 +1,211 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/helpers/authorized_news_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/controllers/piece_of_news_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        0,
+        null,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/models/piece_of_news.rb": [
+        1,
+        1,
+        1,
+        null,
+        20,
+        3,
+        3,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/services/create_authorized.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/services/scan_yandex.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/jobs/update_news.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/jobs/application_job.rb": [
+        1,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/jobs/discard_authorized.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/channels/root_page_channel.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/pseudoclaws/RubymineProjects/news_presenter/app/workers/check_news_worker.rb": [
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1505154641
+  }
+}

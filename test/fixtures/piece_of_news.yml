@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  description: MyText
+  published_at: 2017-09-09 13:53:37
+  authorized: false
+  valid_until: 
+
+two:
+  title: MyText
+  description: MyText
+  published_at: 2017-09-09 13:53:37
+  authorized: false
+  valid_until: 

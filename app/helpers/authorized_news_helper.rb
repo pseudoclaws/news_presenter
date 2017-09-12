@@ -1,0 +1,2 @@
+module AuthorizedNewsHelper
+end
