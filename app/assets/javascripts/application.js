@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require materialize-sprockets
 //= require js-routes
+//= require_tree ./lib
 //= require_tree .

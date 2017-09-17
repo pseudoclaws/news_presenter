@@ -34,6 +34,6 @@ export default class DisplayCardContainer extends React.Component
 
   stateChanged(data)
   {
-    this.setState({ piece_of_news: data });
+    this.setState({ piece_of_news: data.piece_of_news });
   }
 }

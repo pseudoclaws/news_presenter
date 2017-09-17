@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.0.1",
+    "actioncable-js": "^5.0.0-rc2",
     "babel-preset-react": "^6.24.1",
     "es6-actioncable": "^0.5.5",
     "immutable": "^3.8.1",
@@ -17,6 +18,6 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "webpack-dev-server": "^2.7.1"
+    "webpack-dev-server": "^2.8.2"
   }
 }

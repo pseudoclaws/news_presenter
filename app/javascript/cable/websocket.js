@@ -5,9 +5,6 @@ import Cable from 'es6-actioncable';
 const WEBSOCKET_URL = '/cable';
 
 export default class Websocket {
-  constructor() {
-  }
-
   connect() {
     console.log('connecting websocket');
     this.consumer = Cable.createConsumer(WEBSOCKET_URL);
