@@ -16,6 +16,6 @@ RSpec.describe CreateAuthorized, type: :class do
     ActiveJob::Base.queue_adapter = :test
     expect {
       CreateAuthorized.new(news_params).call
-    }.to have_enqueued_job(DiscardAuthorized)
+    }.to have_enqueued_job(DiscardAuthorized).at(news_params[:valid_until])
   end
 end

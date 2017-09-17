@@ -12,17 +12,23 @@ class UpdateNews < ApplicationJob
     last = PieceOfNews.from_yandex.first
     return if last.present? && last.guid == from_feed.guid
     create
+    publish
   end
 
   private
 
   def create
-    PieceOfNews.create!(
+    @piece_of_news = PieceOfNews.create!(
       title: from_feed.title,
       description: from_feed.description,
       link: from_feed.link,
       guid: from_feed.guid,
       published_at: from_feed.pubDate
     )
+  end
+
+  def publish
+    return if PieceOfNews.authorized.first.exists?
+    ApplicationCable.server.broadcast('root_page', piece_of_news: @piece_of_news)
   end
 end
