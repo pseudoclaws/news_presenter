@@ -12,6 +12,7 @@ set :application_name, 'news_presenter'
 set :domain, 'news.ingrotto.com'
 set :user, 'deploy'
 set :deploy_to, "/home/#{user}/#{application_name}"
+set :rails_root, "#{deploy_to}/current"
 set :repository, 'git@github.com:pseudoclaws/news_presenter.git'
 set :branch, 'master'
 
@@ -73,11 +74,11 @@ task :deploy => :environment do
     invoke :'bundle:install'
     invoke :'rails:db_create'
     invoke :'rails:db_migrate'
-    # invoke :'rails:assets_precompile'
-    # invoke :'deploy:cleanup'
-    # to :launch do
-    #   queue "if [ -f #{rails_root}/tmp/pids/unicorn.pid ] && [ -e /proc/$(cat #{rails_root}/tmp/pids/unicorn.pid) ]; then kill -USR2 `cat #{rails_root}/tmp/pids/unicorn.pid`; else cd #{rails_root} && bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D; fi"
-    # end
+    invoke :'rails:assets_precompile'
+    invoke :'deploy:cleanup'
+    to :launch do
+      queue "if [ -f #{rails_root}/tmp/pids/unicorn.pid ] && [ -e /proc/$(cat #{rails_root}/tmp/pids/unicorn.pid) ]; then kill -USR2 `cat #{rails_root}/tmp/pids/unicorn.pid`; else cd #{rails_root} && rvm use 2.4.0 && bundle exec unicorn -c config/unicorn.rb -E #{rails_env} -D; fi"
+    end
   end
 
   # you can use `run :local` to run tasks on local machine before of after the deploy scripts
