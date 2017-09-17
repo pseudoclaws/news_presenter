@@ -28,7 +28,7 @@ class UpdateNews < ApplicationJob
   end
 
   def publish
-    return if PieceOfNews.authorized.first.exists?
-    ApplicationCable.server.broadcast('root_page', piece_of_news: @piece_of_news)
+    return if PieceOfNews.authorized.exists?
+    ActionCable.server.broadcast('root_page', piece_of_news: @piece_of_news)
   end
 end
